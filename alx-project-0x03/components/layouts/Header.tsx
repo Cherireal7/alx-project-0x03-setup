@@ -1,28 +1,15 @@
-import Link from "next/link";
-import Button from "../common/Button";
+import { LayoutProps } from "@/interface";
+import Footer from "./Footer";
+import Header from "@/components/layouts/Header";
 
-const Header: React.FC = () => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <header className="fixed w-full bg-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center py-6 px-4 md:px-8">
-        <Link href="/" className="text-3xl md:text-5xl font-bold text-gray-800 tracking-tight">
-          Splash App
-        </Link>
-
-        {/* Button Group */}
-        <div className="flex gap-4">
-          <Button
-            buttonLabel="Sign In"
-            buttonBackgroundColor="red"
-          />
-          <Button
-            buttonLabel="Sign Up"
-            buttonBackgroundColor="blue"
-          />
-        </div>
-      </div>
-    </header>
+    <>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </>
   );
 };
 
-export default Header;
+export default Layout;

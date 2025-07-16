@@ -1,6 +1,6 @@
 import { LayoutProps } from "@/interface";
 import Footer from "./Footer";
-import Header from "./Header";
+import Header from "@/components/layouts/Header";
 
 
 
